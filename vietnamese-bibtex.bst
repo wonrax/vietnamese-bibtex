@@ -4,7 +4,9 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `babel,ed-au,dt-beg,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,pp,abr,mth-bare,ord,and-xcom,url,url-blk,nfss,')
+%% merlin.mbs  (with options: `head,exlang,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% vietnamese.mbs  (with options: `exlang,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% merlin.mbs  (with options: `tail,exlang,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
 %% ----------------------------------------
 %% ***  ***
 %% 
@@ -23,8 +25,8 @@
  % \ProvidesFile{merlin.mbs}[2011/11/18 4.33 (PWD, AO, DPC)]
  %   For use with BibTeX version 0.99a or later
  %-------------------------------------------------------------------
- % This bibliography style file requires a file named  babelbst.tex
- %   containing the definitions of word commands like \bbleditor, etc.
+ % This bibliography style file is intended for texts in
+ %   ENGLISH
  % This is a numerical citation style, and as such is standard LaTeX.
  % It requires no extra package to interface to the main text.
  % The form of the \bibitem entries is
@@ -160,26 +162,6 @@ FUNCTION {non.stop}
    #-1 #1 substring$ "." =
 }
 
-STRINGS {z}
-
-FUNCTION {remove.dots}
-{ 'z :=
-   ""
-   { z empty$ not }
-   { z #1 #2 substring$
-     duplicate$ "\." =
-       { z #3 global.max$ substring$ 'z :=  * }
-       { pop$
-         z #1 #1 substring$
-         z #2 global.max$ substring$ 'z :=
-         duplicate$ "." = 'pop$
-           { * }
-         if$
-       }
-     if$
-   }
-   while$
-}
 FUNCTION {new.block.checka}
 { empty$
     'skip$
@@ -229,136 +211,94 @@ FUNCTION {tie.or.space.prefix}
 }
 
 FUNCTION {capitalize}
-{ "\capitalize" swap$ * }
+{ "u" change.case$ "t" change.case$ }
 
 FUNCTION {space.word}
 { " " swap$ * " " * }
  % Here are the language-specific definitions for explicit words.
  % Each function has a name bbl.xxx where xxx is the English word.
- % The BABEL language selection is made here; definitions in babelbst.tex.
+ %-------------------------------------------------------------------
+ % Begin module:
+ % \ProvidesFile{english.mbs}[2003/11/06 4.2 (PWD)]
+
+ % The language selected here is ENGLISH
 FUNCTION {bbl.and}
-{ "\bbland{}"}
+{ "và"}
 
 FUNCTION {bbl.etal}
-{ "\bbletal{}"}
+{ "et~al." }
 
 FUNCTION {bbl.editors}
-{ "\bbleditors{}" }
+{ "biên soạn" }
 
 FUNCTION {bbl.editor}
-{ "\bbleditor{}" }
+{ "biên soạn" }
 
 FUNCTION {bbl.edby}
-{ "\bbledby{}" }
+{ "chỉnh sửa bởi" }
 
 FUNCTION {bbl.edition}
-{ "\bbledn{}" }
+{ "edition" }
 
 FUNCTION {bbl.volume}
-{ "\bblvol{}" }
+{ "tập" }
 
 FUNCTION {bbl.of}
-{ "\bblof{}" }
+{ "trong" }
 
 FUNCTION {bbl.number}
-{ "\bblno{}" }
+{ "số" }
 
 FUNCTION {bbl.nr}
-{ "\bblno{}" }
+{ "số" }
 
 FUNCTION {bbl.in}
-{ "\bblin{}" }
+{ "trong" }
 
 FUNCTION {bbl.pages}
-{ "\bblpp{}" }
+{ "tr." }
 
 FUNCTION {bbl.page}
-{ "\bblp{}" }
+{ "tr." }
 
 FUNCTION {bbl.chapter}
-{ "\bblchap{}" }
+{ "chương" }
 
 FUNCTION {bbl.techrep}
-{ "\bbltechrep{}" }
+{ "Báo cáo kỹ thuật" }
 
 FUNCTION {bbl.mthesis}
-{ "\bblmthesis{}" }
+{ "Luận văn Thạc sĩ" }
 
 FUNCTION {bbl.phdthesis}
-{ "\bblphdthesis{}" }
+{ "Luận văn Tiến sĩ" }
 
-FUNCTION {bbl.first}
-{ "\bblfirsto{}" }
+MACRO {jan} {"Tháng 1"}
 
-FUNCTION {bbl.second}
-{ "\bblsecondo{}" }
+MACRO {feb} {"Tháng 2"}
 
-FUNCTION {bbl.third}
-{ "\bblthirdo{}" }
+MACRO {mar} {"Tháng 3"}
 
-FUNCTION {bbl.fourth}
-{ "\bblfourtho{}" }
+MACRO {apr} {"Tháng 4"}
 
-FUNCTION {bbl.fifth}
-{ "\bblfiftho{}" }
+MACRO {may} {"Tháng 5"}
 
-FUNCTION {bbl.st}
-{ "\bblst{}" }
+MACRO {jun} {"Tháng 6"}
 
-FUNCTION {bbl.nd}
-{ "\bblnd{}" }
+MACRO {jul} {"Tháng 7"}
 
-FUNCTION {bbl.rd}
-{ "\bblrd{}" }
+MACRO {aug} {"Tháng 8"}
 
-FUNCTION {bbl.th}
-{ "\bblth{}" }
+MACRO {sep} {"Tháng 9"}
 
-MACRO {jan} {"\bbljan{}"}
+MACRO {oct} {"Tháng 10"}
 
-MACRO {feb} {"\bblfeb{}"}
+MACRO {nov} {"Tháng 11"}
 
-MACRO {mar} {"\bblmar{}"}
+MACRO {dec} {"Tháng 12"}
 
-MACRO {apr} {"\bblapr{}"}
-
-MACRO {may} {"\bblmay{}"}
-
-MACRO {jun} {"\bbljun{}"}
-
-MACRO {jul} {"\bbljul{}"}
-
-MACRO {aug} {"\bblaug{}"}
-
-MACRO {sep} {"\bblsep{}"}
-
-MACRO {oct} {"\bbloct{}"}
-
-MACRO {nov} {"\bblnov{}"}
-
-MACRO {dec} {"\bbldec{}"}
-
-FUNCTION {eng.ord}
-{ duplicate$ "1" swap$ *
-  #-2 #1 substring$ "1" =
-     { bbl.th * }
-     { duplicate$ #-1 #1 substring$
-       duplicate$ "1" =
-         { pop$ bbl.st * }
-         { duplicate$ "2" =
-             { pop$ bbl.nd * }
-             { "3" =
-                 { bbl.rd * }
-                 { bbl.th * }
-               if$
-             }
-           if$
-          }
-       if$
-     }
-   if$
-}
-
+ % End module: english.mbs
+%% Copyright 1994-2011 Patrick W Daly
 MACRO {acmcs} {"ACM Computing Surveys"}
 
 MACRO {acta} {"Acta Informatica"}
@@ -669,7 +609,13 @@ FUNCTION {format.date}
         }
       if$
       *
-      remove.dots
+    }
+  if$
+  duplicate$ empty$
+    'skip$
+    {
+      before.all 'output.state :=
+    " (" swap$ * ")" *
     }
   if$
 }
@@ -722,63 +668,10 @@ FUNCTION {format.number.series}
     { "" }
   if$
 }
-FUNCTION {is.num}
-{ chr.to.int$
-  duplicate$ "0" chr.to.int$ < not
-  swap$ "9" chr.to.int$ > not and
-}
-
-FUNCTION {extract.num}
-{ duplicate$ 't :=
-  "" 's :=
-  { t empty$ not }
-  { t #1 #1 substring$
-    t #2 global.max$ substring$ 't :=
-    duplicate$ is.num
-      { s swap$ * 's := }
-      { pop$ "" 't := }
-    if$
-  }
-  while$
-  s empty$
-    'skip$
-    { pop$ s }
-  if$
-}
-
-FUNCTION {convert.edition}
-{ extract.num "l" change.case$ 's :=
-  s "first" = s "1" = or
-    { bbl.first 't := }
-    { s "second" = s "2" = or
-        { bbl.second 't := }
-        { s "third" = s "3" = or
-            { bbl.third 't := }
-            { s "fourth" = s "4" = or
-                { bbl.fourth 't := }
-                { s "fifth" = s "5" = or
-                    { bbl.fifth 't := }
-                    { s #1 #1 substring$ is.num
-                        { s eng.ord 't := }
-                        { edition 't := }
-                      if$
-                    }
-                  if$
-                }
-              if$
-            }
-          if$
-        }
-      if$
-    }
-  if$
-  t
-}
 
 FUNCTION {format.edition}
 { edition duplicate$ empty$ 'skip$
     {
-      convert.edition
       output.state mid.sentence =
         { "l" }
         { "t" }
@@ -1617,9 +1510,6 @@ FUNCTION {begin.bib}
   write$ newline$
   "  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi"
   write$ newline$
-  "\input{babelbst.tex}" write$ newline$
-  "\newcommand{\Capitalize}[1]{\uppercase{#1}}" write$ newline$
-  "\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}" write$ newline$
 }
 EXECUTE {begin.bib}
 EXECUTE {init.state.consts}

@@ -1,17 +1,13 @@
 \documentclass[hidelinks, 11pt, a4paper]{article}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
+\usepackage[utf8]{inputenc}
 \usepackage[vietnamese]{babel}
-\usepackage{fontspec}
-\usepackage{unicode-math}
 \usepackage[unicode]{hyperref}  
 
 \begin{document}
-Cit heh ihi hih ih: \cite{vaswani_attention_2017}.
+Example citation: \cite{CitekeyBook,CitekeyArticle}\cite{CitekeyManual}.
 \nocite{*}
-\newpage
-\newpage
-\newpage
 \bibliographystyle{vietnamese-bibtex}
 \bibliography{test}
 \end{document}

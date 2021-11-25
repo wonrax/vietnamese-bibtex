@@ -1,6 +1,6 @@
-%% Driver file to produce vietnamese-bibtex.bst from merlin.mbs
+%% Driver file to produce vietnam-bibtex.dbj from merlin.mbs
 %% Generated with makebst, version 4.1 (2003/09/08)
-%% Produced on 2021/11/26 at 1:48
+%% Produced on 2021/11/25 at 23:05
 %% 
 \input docstrip
 
@@ -32,23 +32,23 @@ End of customized bst file
 %>>INTERNAL LANGUAGE SUPPORT (if no external language file)
     exlang,%: External language file
 %<<STYLE OF CITATIONS:
-    %: (def) Numerical as in standard LaTeX
-% ay,%: Author-year with some non-standard interface
+%   %: (def) Numerical as in standard LaTeX
+  ay,%: Author-year with some non-standard interface
 % alph,%: Alpha style, Jon90 or JWB90 for single or multiple authors
 % alph,alf-1,%: Alpha style, Jon90 even for multiple authors
 % alph,alf-f,%: Alpha style, Jones90 (full name of first author)
 % cite,%: Cite key (special for listing contents of bib file)
-%------\ans=*(==)-------
+%------\ans=a(==ay)-------
 %>>STYLE OF CITATIONS:
 %<<HTML OUTPUT (if non author-year citations)
-    %: (def) Normal LaTeX output
+%   %: (def) Normal LaTeX output
 % html,%: Hypertext output, in HTML code, in paragraphs
 % html,htlist,%: Hypertext list with sequence numbers
 % html,htdes,%: Hypertext with keys for viewing databases
 %------\ans=*(==)-------
 %>>HTML OUTPUT (if non author-year citations)
 %<<AUTHOR--YEAR SUPPORT SYSTEM (if author-year citations)
-% nat,%: Natbib for use with natbib v5.3 or later
+  nat,%: Natbib for use with natbib v5.3 or later
 %   %: (def) Older Natbib without full authors citations
 % alk,%: Apalike for use with apalike.sty
 % har,%: Harvard system with harvard.sty
@@ -82,7 +82,7 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>PRESENTATIONS:
 %<<ORDERING OF REFERENCES (if non-author/year and non-alph)
-    %: (def) Alphabetical by all authors
+%   %: (def) Alphabetical by all authors
 % seq-no,%: Citation order (unsorted, like unsrt.bst)
 % seq-yr,%: Year ordered and then by authors
 % seq-yrr,%: Reverse year ordered and then by authors
@@ -90,13 +90,13 @@ End of customized bst file
 %>>ORDERING OF REFERENCES (if non-author/year and non-alph)
 %<<ORDERING OF REFERENCES (if author-year citations)
 %   %: (def) Alphabetical by all authors
-% seq-lab,%: By label (Jones before Jones and James before Jones et al)
+  seq-lab,%: By label (Jones before Jones and James before Jones et al)
 % seq-labc,%: By label and cite order (like above but all Jones et al ordered as cited)
 % seq-key,%: By label and cite key instead of label and title, as above
 % seq-yr,%: Year ordered and then by authors (for publication lists)
 % seq-yrr,%: Reverse year ordered and then by authors (most recent first)
 % seq-no,%: Citation order (unsorted, only meaningful for numericals)
-%------\ans=*(==)-------
+%------\ans=l(==seq-lab)-------
 %>>ORDERING OF REFERENCES (if author-year citations)
 %<<ORDER ON VON PART (if not citation order)
     %: (def) Sort on von part (de la Maire before Defoe)
@@ -104,7 +104,7 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>ORDER ON VON PART (if not citation order)
 %<<IGNORE FIRST NAMES (if author-year citations)
-%   %: (def) Respect first names or initials, treat as different authors
+    %: (def) Respect first names or initials, treat as different authors
 % xintls,%: Sort on surname only and treat all Smiths as one
 %------\ans=*(==)-------
 %>>IGNORE FIRST NAMES (if author-year citations)
@@ -132,7 +132,7 @@ End of customized bst file
 %>>POSITION OF JUNIOR (if author names reversed)
 %>>EDITOR NAMES IN COLLECTIONS (if author names reversed)
 %<<JUNIOR PART IN THE CITATION (if author-year citations)
-%   %: (def) No `junior' part in the citations but in the ref listing
+    %: (def) No `junior' part in the citations but in the ref listing
 % jnrlab,%: `Junior' in citations as well as in ref listing
 %------\ans=*(==)-------
 %>>JUNIOR PART IN THE CITATION (if author-year citations)
@@ -201,7 +201,7 @@ End of customized bst file
 %>>FONT FOR `AND' IN LIST:
 %>>FONT FOR FIRST NAMES (if non-default font for authors)
 %<<FONT OF CITATION LABELS IN TEXT (if author-year citations)
-%   %: (def) Cited authors plain as result of \cite command
+    %: (def) Cited authors plain as result of \cite command
 % lab,lab-it,%: Cited authors italic 
 % lab,lab-sc,%: Cited authors small caps 
 % lab,lab-bf,%: Cited authors bold 
@@ -213,18 +213,18 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>FONT FOR `AND' IN CITATIONS (if non-default font for citation lables)
 %<<FONT OF EXTRA LABEL (The extra letter on the year)
-%   %: (def) Extra label plain 
+    %: (def) Extra label plain 
 % xlab-it,%: Extra label italic 
 %------\ans=*(==)-------
 %>>FONT OF EXTRA LABEL (The extra letter on the year)
 %>>FONT OF CITATION LABELS IN TEXT (if author-year citations)
 %<<LABEL WHEN AUTHORS MISSING (if author-year citations)
-% keyxyr,%: Year blank when KEY replaces missing author (for natbib 7.0)
+  keyxyr,%: Year blank when KEY replaces missing author (for natbib 7.0)
 %   %: (def) Year included when KEY replaces missing author 
 %------\ans=*(==keyxyr)-------
 %>>LABEL WHEN AUTHORS MISSING (if author-year citations)
 %<<MISSING DATE (if author-year citations)
-%   %: (def) Missing date set to ???? in label and text
+    %: (def) Missing date set to ???? in label and text
 % blkyear,%: Missing date left blank 
 %------\ans=*(==)-------
 %>>MISSING DATE (if author-year citations)
@@ -237,35 +237,35 @@ End of customized bst file
 %>>DATE POSITION:
 %<<DATE FORMAT (if non author-year citations)
 %   %: (def) Plain month and year without any brackets
-  yr-par,%: Date in parentheses as (May 1993)
+% yr-par,%: Date in parentheses as (May 1993)
 % yr-brk,%: Date in brackets as [May 1993]
 % yr-col,%: Date preceded by colon as `: May 1993'
 % yr-per,%: Date preceded by period as `. May 1993'
 % yr-com,%: Date preceded by comma as `, May 1993'
 % yr-blk,%: Date preceded by space only, as ` May 1993'
-%------\ans=p(==yr-par)-------
+%------\ans=*(==)-------
 %<<SUPPRESS MONTH:
-    %: (def) Date is month and year 
+%   %: (def) Date is month and year 
 % xmth,%: Date is year only 
 %------\ans=*(==)-------
 %>>SUPPRESS MONTH:
 %<<REVERSED DATE (if including month)
 %   %: (def) Date as month year 
-  dtrev,%: Date as year month 
-%------\ans=r(==dtrev)-------
+% dtrev,%: Date as year month 
+%------\ans=*(==)-------
 %>>REVERSED DATE (if including month)
 %>>DATE FORMAT (if non author-year citations)
 %<<DATE FORMAT (if author-year citations)
 %   %: (def) Year plain without any brackets
-% yr-par,%: Year in parentheses as (1993)
+  yr-par,%: Year in parentheses as (1993)
 % yr-brk,%: Year in brackets as [1993]
 % yr-col,%: Year preceded by colon as `: 1993'
 % yr-per,%: Year preceded by period as `. 1993'
 % yr-com,%: Date preceded by comma as `, 1993'
 % yr-blk,%: Year preceded by space only, as ` 1993'
-%------\ans=*(==)-------
+%------\ans=p(==yr-par)-------
 %<<INCLUDE MONTHS:
-%   %: (def) Date is year only without the month
+    %: (def) Date is year only without the month
 % aymth,%: Include month in date 
 %------\ans=*(==)-------
 %>>INCLUDE MONTHS:
@@ -294,7 +294,7 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>DATE FONT:
 %<<TRUNCATE YEAR (if author-year citations)
-% note-yr,%: Year text full as 1990--1993 or `in press'
+  note-yr,%: Year text full as 1990--1993 or `in press'
 %   %: (def) Year truncated to last 4 digits
 %------\ans=*(==note-yr)-------
 %>>TRUNCATE YEAR (if author-year citations)
@@ -411,9 +411,9 @@ End of customized bst file
 %------\ans=p(==jwdvol)-------
 %>>WORD `VOLUME' IN ARTICLES:
 %<<NUMBER AND SERIES FOR COLLECTIONS:
-% num-xser,%: Allows number without series and suppresses word "number"
-    %: (def) Standard BibTeX as: "number 123 in Total Works"; error if number and no series
-%------\ans=s(==)-------
+  num-xser,%: Allows number without series and suppresses word "number"
+%   %: (def) Standard BibTeX as: "number 123 in Total Works"; error if number and no series
+%------\ans=*(==num-xser)-------
 %>>NUMBER AND SERIES FOR COLLECTIONS:
 %<<POSITION OF NUMBER AND SERIES:
     %: (def) After chapter and pages as in standard BibTeX
@@ -426,9 +426,9 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>VOLUME AND SERIES FOR BOOKS/COLLECTIONS:
 %<<POSITION OF VOLUME AND SERIES FOR INCOLLECTIONS:
-    %: (def) Series and volume after the editors 
-% ser-ed,%: Series and volume after booktitle and before editors
-%------\ans=*(==)-------
+%   %: (def) Series and volume after the editors 
+  ser-ed,%: Series and volume after booktitle and before editors
+%------\ans=e(==ser-ed)-------
 %>>POSITION OF VOLUME AND SERIES FOR INCOLLECTIONS:
 %<<JOURNAL NAME PUNCTUATION:
     %: (def) Comma after journal name
@@ -459,12 +459,12 @@ End of customized bst file
 %>>PUBLISHER ADDRESS:
 %<<PUBLISHER IN PARENTHESES:
 %   %: (def) Publisher as normal block without parentheses
-  pub-par,%: Publisher in parentheses 
-% pub-date,%: Publisher and date in parentheses (Oxford, 1994)
+% pub-par,%: Publisher in parentheses 
+  pub-date,%: Publisher and date in parentheses (Oxford, 1994)
 % pub-date,pub-xc,%: Publisher and date in parentheses, no comma (Oxford 1994)
 % pub-date,pub-xpar,%: Publisher and date without parentheses Oxford, 1994
 % pub-date,pub-xpar,pub-xc,%: Publisher and date, no parentheses, no comma Oxford 1994
-%------\ans=p(==pub-par)-------
+%------\ans=d(==pub-date)-------
 %>>PUBLISHER IN PARENTHESES:
 %<<PUBLISHER POSITION:
     %: (def) Publisher after chapter, pages 
@@ -500,7 +500,7 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>`EDITOR' AFTER NAMES (EDITED BOOKS WITHOUT AUTHORS):
 %<<EDITOR IN COLLECTIONS:
-    %: (def) Same as for edited book (names before booktitle)
+%   %: (def) Same as for edited book (names before booktitle)
 % edby,%: In booktitle, edited by ..  (where .. is names)
 % edby-par,%: In booktitle (edited by ..) 
 % edby-parc,%: In booktitle, (edited by ..) 
@@ -509,8 +509,8 @@ End of customized bst file
 % edby-par,edbyx,%: In booktitle (editor..) 
 % edby-parc,edbyx,%: In booktitle, (editor..) 
 % edby,edbyy,%: In booktitle, .., editor 
-% edby-par,edbyy,%: In booktitle (.., editor) 
-%------\ans=*(==)-------
+  edby-par,edbyy,%: In booktitle (.., editor) 
+%------\ans=m(==edby-par,edbyy)-------
 %>>EDITOR IN COLLECTIONS:
 %<<CAPITALIZE `EDITOR' OR `EDITED BY' (if editor capitalizable)
 %   %: (def) `(editor,..)' or `(edited by..)' in lower case
@@ -596,106 +596,3 @@ End of customized bst file
 % ppx,%: `Trang' omitted 
 %------\ans=a(==pp)-------
 %>>ABBREVIATE WORD `TRANG'
-%<<ABBREVIATE WORD `BIEN SOAN':
-    %: (def) `Bien soan' (no abbreviation)
-% ed,%: `Bien soan' abbreviated as b.soan
-%------\ans=*(==)-------
-%>>ABBREVIATE WORD `BIEN SOAN':
-%<<OTHER ABBREVIATIONS:
-%   %: (def) No abbreviations of volume, edition, chapter, etc
-%  abr,%: Abbreviations of such words (e.g., phien ban as p.ban)
-%------\ans=a(==abr)-------
-%>>OTHER ABBREVIATIONS:
-%<<ABBREVIATION FOR `PHIEN BAN' (if abbreviating words)
-    %: (def) `Phien ban' abbreviated as `p.ban' 
-% ednx,%: `Phien ban' abbreviated as `ban' 
-%------\ans=*(==)-------
-%<<MONTHS WITH DOTS:
-    %: (def) Months with dots as Th1.
-% mth-bare,%: Months without dots as Th1 Th2
-%------\ans=*(==)-------
-%>>MONTHS WITH DOTS:
-%>>ABBREVIATION FOR `PHIEN BAN' (if abbreviating words)
-%<<EDITION NUMBERS:
-  xedn,%: Editions as in database saving much processing memory
-%   %: (def) Write out editions as first, second, third, etc
-% ord,%: Numerical editions as 1st, 2nd, 3rd, etc
-%------\ans=*(==xedn)-------
-%>>EDITION NUMBERS:
-%<<STORED JOURNAL NAMES:
-    %: (def) Full journal names for prestored journals
-% jabr,%: Abbreviated journal names 
-% jabr,jaa,%: Abbreviated with astronomy shorthands like ApJ and AJ
-%------\ans=*(==)-------
-%>>STORED JOURNAL NAMES:
-%<<AMPERSAND:
-    %: (def) Use word `and' in author lists
-% amper,%: Use ampersand in place of `and'
-% varand,%: Use \BIBand in place of `and'
-%------\ans=*(==)-------
-%>>AMPERSAND:
-%<<COMMA BEFORE `AND':
-%   %: (def) Comma before `and' as `Tom, Dick, and Harry'
-  and-xcom,%: No comma before `and' as `Tom, Dick and Harry'
-% and-com,%: Comma even with 2 authors as `Tom, and Harry'
-%------\ans=n(==and-xcom)-------
-%>>COMMA BEFORE `AND':
-%<<COMMA BEFORE `AND' EVEN FOR COLLECTION EDITORS (if using comma before `and' with authors)
-% and-com-ed,%: Comma with 2 editors in collections
-%   %: (def) Two editors without comma as `Tom and Harry'
-%------\ans=*(==and-com-ed)-------
-%>>COMMA BEFORE `AND' EVEN FOR COLLECTION EDITORS (if using comma before `and' with authors)
-%<<NO `AND' IN REFERENCE LIST:
-    %: (def) With `and' before last author in reference list
-% xand,%: No `and' as `Tom, Dick, Harry'
-%------\ans=*(==)-------
-%>>NO `AND' IN REFERENCE LIST:
-%<<COMMA BEFORE `ET AL':
-%   %: (def) Comma before `et al' in reference list
-  etal-xc,%: No comma before `et al' 
-%------\ans=x(==etal-xc)-------
-%>>COMMA BEFORE `ET AL':
-%<<FONT OF `ET AL':
-    %: (def) Plain et al 
-% etal-it,%: Italic et al 
-% etal-rm,%: Roman et al even when authors something else
-%------\ans=*(==)-------
-%>>FONT OF `ET AL':
-%<<ADDITIONAL REVTeX DATA FIELDS:
-    %: (def) No additional fields for REVTeX
-% revdata,eprint,url,url-blk,%: Include REVTeX data fields collaboration, eid, eprint, archive, numpages, url
-%------\ans=*(==)-------
-%<<E-PRINT DATA FIELD: (without REVTeX fields)
-    %: (def) Do not include eprint field 
-% eprint,%: Include eprint and archive fields for electronic publications
-%------\ans=*(==)-------
-%>>E-PRINT DATA FIELD: (without REVTeX fields)
-%<<URL ADDRESS: (without REVTeX fields)
-%   %: (def) No URL for electronic (Internet) documents
-  url,url-blk,%: Include URL as regular item block
-% url,url-nt,%: URL as note 
-% url,url-nl,%: URL on new line after rest of reference
-%------\ans=u(==url,url-blk)-------
-%>>URL ADDRESS: (without REVTeX fields)
-%>>ADDITIONAL REVTeX DATA FIELDS:
-%<<REFERENCE COMPONENT TAGS:
-    %: (def) No reference component tags in the \bibitem entries
-% bibinfo,%: Reference component tags like \bibinfo in the content of \bibitem
-%------\ans=*(==)-------
-%>>REFERENCE COMPONENT TAGS:
-%<<EMPHASIS: (affects all so-called italics)
-    %: (def) Use emphasis ie, \em, allows font switching
-% em-it,%: Use true italics ie, \it, absolute italics
-% em-x,%: No italics at all
-% em-ul,%: Underlining in place of italics, best with ulem package
-%------\ans=*(==)-------
-%>>EMPHASIS: (affects all so-called italics)
-%<<COMPATIBILITY WITH PLAIN TEX:
-  nfss,%: Use LaTeX commands which may not work with Plain TeX
-% plntx,%: Use only Plain TeX commands for fonts and testing
-%------\ans=*(==nfss)-------
-%>>COMPATIBILITY WITH PLAIN TEX:
-,{%
-  }}
-\generate{\file{vietnamese-bibtex.bst}{\MBopts}}
-\endbatchfile
