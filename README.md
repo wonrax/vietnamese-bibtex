@@ -16,3 +16,5 @@ To make edits to the translated words, change the content of the file `vietnames
 latex vietnumeric.dbj
 ```
 It should output a new version of `vietnumeric.bst`.
+
+To make advanced changes or further modification, please visit [custom-bib's page](https://www.ctan.org/pkg/custom-bib) for documentation and tutorials.
