@@ -1,5 +1,5 @@
 %%
-%% This is file `vietnamese-bibtex.bst',
+%% This is file `vietnumeric.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
@@ -1521,4 +1521,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `vietnamese-bibtex.bst'.
+%% End of file `vietnumeric.bst'.
