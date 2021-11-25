@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `babel,ed-au,dt-beg,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,ser-ed,isbn,issn,doi,edby-par,edbyy,pp,abr,mth-bare,ord,and-xcom,url,url-blk,nfss,')
+%% merlin.mbs  (with options: `babel,ed-au,dt-beg,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,pp,abr,mth-bare,ord,and-xcom,url,url-blk,nfss,')
 %% ----------------------------------------
 %% ***  ***
 %% 
@@ -576,11 +576,7 @@ FUNCTION {format.title}
 FUNCTION {end.quote.btitle}
 { booktitle empty$
     'skip$
-    { editor empty$
-        { before.all 'output.state := }
-        'skip$
-      if$
-    }
+    { before.all 'output.state := }
   if$
 }
 FUNCTION {output.bibitem}
@@ -922,17 +918,13 @@ FUNCTION {format.booktitle}
 FUNCTION {format.in.ed.booktitle}
 { format.booktitle duplicate$ empty$ 'skip$
     {
-      format.bvolume duplicate$ empty$ 'pop$
-        { ", " swap$ * * }
-      if$
       editor "editor" format.names.ed duplicate$ empty$ 'pop$
         {
+          "," *
+          " " *
           get.bbl.editor
-          swap$ "," *
-          " " * swap$ *
-          "(" swap$ * ")" *
-          swap$
-          " " * swap$
+          ", " *
+          * swap$
           * }
       if$
       word.in swap$ *
@@ -1066,6 +1058,7 @@ FUNCTION {format.org.or.pub}
   address empty$ t empty$ and
     'skip$
     {
+      add.blank "(" *
       t empty$
         { address "address" bibinfo.check *
         }
@@ -1076,6 +1069,7 @@ FUNCTION {format.org.or.pub}
           if$
         }
       if$
+      ")" *
     }
   if$
 }
@@ -1221,6 +1215,7 @@ FUNCTION {incollection}
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
       end.quote.btitle
+      format.bvolume output
       format.number.series output
       format.chapter.pages output
       new.sentence
@@ -1249,6 +1244,7 @@ FUNCTION {inproceedings}
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
       end.quote.btitle
+      format.bvolume output
       format.number.series output
       format.pages output
       new.sentence

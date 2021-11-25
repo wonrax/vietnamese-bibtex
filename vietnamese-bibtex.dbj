@@ -422,7 +422,7 @@ End of customized bst file
 %>>VOLUME AND SERIES FOR BOOKS/COLLECTIONS:
 %<<POSITION OF VOLUME AND SERIES FOR INCOLLECTIONS:
 %   %: (def) Series and volume after the editors 
-  ser-ed,%: Series and volume after booktitle and before editors
+%  ser-ed,%: Series and volume after booktitle and before editors
 %------\ans=e(==ser-ed)-------
 %>>POSITION OF VOLUME AND SERIES FOR INCOLLECTIONS:
 %<<JOURNAL NAME PUNCTUATION:
@@ -454,7 +454,7 @@ End of customized bst file
 %>>PUBLISHER ADDRESS:
 %<<PUBLISHER IN PARENTHESES:
     %: (def) Publisher as normal block without parentheses
-% pub-par,%: Publisher in parentheses 
+ pub-par,%: Publisher in parentheses 
 % pub-date,%: Publisher and date in parentheses (Oxford, 1994)
 % pub-date,pub-xc,%: Publisher and date in parentheses, no comma (Oxford 1994)
 % pub-date,pub-xpar,%: Publisher and date without parentheses Oxford, 1994
@@ -504,7 +504,7 @@ End of customized bst file
 % edby-par,edbyx,%: In booktitle (editor..) 
 % edby-parc,edbyx,%: In booktitle, (editor..) 
 % edby,edbyy,%: In booktitle, .., editor 
-  edby-par,edbyy,%: In booktitle (.., editor) 
+% edby-par,edbyy,%: In booktitle (.., editor) 
 %------\ans=m(==edby-par,edbyy)-------
 %>>EDITOR IN COLLECTIONS:
 %<<CAPITALIZE `EDITOR' OR `EDITED BY' (if editor capitalizable)
