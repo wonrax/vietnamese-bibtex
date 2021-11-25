@@ -4,7 +4,7 @@ Bibliography in Vietnamese with BibTeX. Currently supports only numeric citation
 View the compiled PDF showcase [here](https://github.com/wonrax/vietnamese-bibtex/blob/main/test/test.pdf).
 
 ### How to use
-Download the file `vietnumeric.bst` and use it inside your `.tex` file.
+Download the file `vietnumeric.bst` and use it within your `.tex` file.
 For example, if you put the `vietnumeric.bst` in the same directory with your `.tex` file, specify the bibliography style with this command:
 ```
 \bibliographystyle{vietnumeric}
