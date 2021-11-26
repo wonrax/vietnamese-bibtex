@@ -1,13 +1,14 @@
 \documentclass[hidelinks, 11pt, a4paper]{article}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
-\usepackage[numbers]{natbib}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage[utf8]{inputenc}
 \usepackage[vietnamese]{babel}
 \usepackage[unicode]{hyperref}  
 
 \begin{document}
-Example citation: \cite{CitekeyBook,CitekeyArticle}\cite{CitekeyManual}.
+Example citation:
+\cite{CitekeyBook,CitekeyArticle}\cite{CitekeyManual}\cite{butcher-81,chicago-82,CitekeyIncollection,CitekeyProceedings}.
 \nocite{*}
 \bibliographystyle{../vietnumeric}
-\bibliography{test}
+\bibliography{example}
 \end{document}

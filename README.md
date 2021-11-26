@@ -1,7 +1,16 @@
 # vietnamese-bibtex
 Bibliography in Vietnamese with BibTeX. Currently supports only numeric citation. Made with [custom-bib](https://www.ctan.org/pkg/custom-bib).
 
-View the compiled PDF showcase [here](https://github.com/wonrax/vietnamese-bibtex/blob/main/test/test.pdf).
+### Style examples
+```
+[1] Leonard Susskind và George Hrabovsky (2014), Classical mechanics: the theoretical minimum (Penguin Random House, New York, NY).
+
+[2] P. J. Cohen (1963), “The independence of the continuum hypothesis”. Proceedings of the National Academy of Sciences, tập 50, số 6, tr. 1143–1148.
+
+[3] Jian Tang (1996 Tháng 9), “Spin structure of the nucleon in the asymptotic limit”. Luận văn Thạc sĩ, Massachusetts Institute of Technology, Cambridge, MA.
+
+[4] Judith Butcher (1981), Copy-editing (Cambridge University Press), 2nd edition.
+```
 
 ### How to use
 Download the file `vietnumeric.bst` and use it within your `.tex` file.
@@ -9,7 +18,7 @@ For example, if you put the `vietnumeric.bst` in the same directory with your `.
 ```
 \bibliographystyle{vietnumeric}
 ```
-Example, compilable code is available under [test/](https://github.com/wonrax/vietnamese-bibtex/tree/main/test).
+Example, compilable code is available under [example/](https://github.com/wonrax/vietnamese-bibtex/tree/main/example).
 ### About book edition translation
 Book edition (e.g., "3rd edition" or "phiên bản thứ 3") is not translated since it involves deep modification of the code. If you want to customize the style to translate the book edition, please refer to the section [#Customization](#customization) below.
 ### Customization

@@ -522,7 +522,7 @@ End of customized bst file
 % blk-com,%: Comma between blocks 
 % blk-com,com-semi,%: Semi-colon between blocks 
 % blk-com,com-blank,%: Blanks between blocks 
-% blk-tit,%: Period after titles of articles, books, etc else commas
+ blk-tit,%: Period after titles of articles, books, etc else commas
 % blk-tit,tit-col,%: Colon after titles of articles, books, etc else commas
 % blk-tita,%: Period after titles of articles else commas
 % blk-tita,tit-col,%: Colon after titles of articles else commas
@@ -530,7 +530,7 @@ End of customized bst file
 %>>PUNCTUATION BETWEEN SECTIONS (BLOCKS):
 %<<PUNCTUATION BEFORE NOTES (if not using \newblock)
 %   %: (def) Notes have regular punctuation like all other blocks
-% blknt,%: Notes preceded by period 
+ blknt,%: Notes preceded by period 
 %------\ans=*(==)-------
 %>>PUNCTUATION BEFORE NOTES (if not using \newblock)
 %<<PUNCTUATION AFTER AUTHORS:
