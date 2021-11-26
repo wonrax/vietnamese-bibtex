@@ -10,6 +10,8 @@ For example, if you put the `vietnumeric.bst` in the same directory with your `.
 \bibliographystyle{vietnumeric}
 ```
 Example, compilable code is available under [test/](https://github.com/wonrax/vietnamese-bibtex/tree/main/test).
+### About book edition translation
+Book edition (e.g., "3rd edition" or "phiên bản thứ 3") is not translated since it involves deep modification of the code. If you want to customize the style to translate the book edition, please refer to the section [#Customization](#customization) below.
 ### Customization
 To make edits to the translated words, change the content of the file `vietnamese.mbs` and recompile with:
 ```
