@@ -245,13 +245,13 @@ End of customized bst file
 % yr-blk,%: Date preceded by space only, as ` May 1993'
 %------\ans=p(==yr-par)-------
 %<<SUPPRESS MONTH:
-    %: (def) Date is month and year 
-% xmth,%: Date is year only 
+%   %: (def) Date is month and year 
+ xmth,%: Date is year only 
 %------\ans=*(==)-------
 %>>SUPPRESS MONTH:
 %<<REVERSED DATE (if including month)
 %   %: (def) Date as month year 
-  dtrev,%: Date as year month 
+%  dtrev,%: Date as year month 
 %------\ans=r(==dtrev)-------
 %>>REVERSED DATE (if including month)
 %>>DATE FORMAT (if non author-year citations)

@@ -4,9 +4,9 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `head,exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,blk-tit,blknt,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
-%% vietnamese.mbs  (with options: `exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,blk-tit,blknt,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
-%% merlin.mbs  (with options: `tail,exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,blk-tit,blknt,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% merlin.mbs  (with options: `head,exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,xmth,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,blk-tit,blknt,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% vietnamese.mbs  (with options: `exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,xmth,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,blk-tit,blknt,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% merlin.mbs  (with options: `tail,exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,xmth,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,blk-tit,blknt,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
 %% ----------------------------------------
 %% ***  ***
 %% 
@@ -593,7 +593,7 @@ FUNCTION {word.in}
 
 FUNCTION {format.date}
 {
-  month "month" bibinfo.check
+  ""
   duplicate$ empty$
   year  "year"  bibinfo.check duplicate$ empty$
     { swap$ 'skip$
@@ -603,6 +603,7 @@ FUNCTION {format.date}
     }
     { swap$ 'skip$
         {
+          swap$
           " " * swap$
         }
       if$
