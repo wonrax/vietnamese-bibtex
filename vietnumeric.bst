@@ -4,9 +4,9 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `head,exlang,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
-%% vietnamese.mbs  (with options: `exlang,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
-%% merlin.mbs  (with options: `tail,exlang,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% merlin.mbs  (with options: `head,exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% vietnamese.mbs  (with options: `exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
+%% merlin.mbs  (with options: `tail,exlang,seq-no,seq-lab,ed-au,dt-beg,yr-par,dtrev,tit-qq,qx,bt-qq,thtit-a,vnum-nr,volp-com,pgsep-p,jwdpg,jwdvol,pub-par,isbn,issn,doi,english,pp,xedn,and-xcom,etal-xc,url,url-blk,nfss,,{}')
 %% ----------------------------------------
 %% ***  ***
 %% 
@@ -35,7 +35,8 @@
  %   \cite{key} ==>>          [#]
  %   \cite[chap. 2]{key} ==>> [#, chap. 2]
  % where # is a number determined by the ordering in the reference list.
- % The order in the reference list is alphabetical by authors.
+ % The order in the reference list is that by which the works were originally
+ %   cited in the text, or that in the database.
  %---------------------------------------------------------------------
 
 ENTRY
@@ -828,7 +829,6 @@ FUNCTION {empty.misc.check}
 { author empty$ title empty$ howpublished empty$
   month empty$ year empty$ note empty$
   and and and and and
-  key empty$ not and
     { "all relevant fields are empty in " cite$ * warning$ }
     'skip$
   if$
@@ -1333,145 +1333,6 @@ FUNCTION {unpublished}
 
 FUNCTION {default.type} { misc }
 READ
-FUNCTION {sortify}
-{ purify$
-  "l" change.case$
-}
-INTEGERS { len }
-FUNCTION {chop.word}
-{ 's :=
-  'len :=
-  s #1 len substring$ =
-    { s len #1 + global.max$ substring$ }
-    's
-  if$
-}
-FUNCTION {sort.format.names}
-{ 's :=
-  #1 'nameptr :=
-  ""
-  s num.names$ 'numnames :=
-  numnames 'namesleft :=
-    { namesleft #0 > }
-    { s nameptr
-      "{vv{ } }{ll{ }}{  ff{ }}{  jj{ }}"
-      format.name$ 't :=
-      nameptr #1 >
-        {
-          "   "  *
-          namesleft #1 = t "others" = and
-            { "zzzzz" 't := }
-            'skip$
-          if$
-          t sortify *
-        }
-        { t sortify * }
-      if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
-    }
-  while$
-}
-
-FUNCTION {sort.format.title}
-{ 't :=
-  "A " #2
-    "An " #3
-      "The " #4 t chop.word
-    chop.word
-  chop.word
-  sortify
-  #1 global.max$ substring$
-}
-FUNCTION {author.sort}
-{ author empty$
-    { key empty$
-        { "to sort, need author or key in " cite$ * warning$
-          ""
-        }
-        { key sortify }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-FUNCTION {author.editor.sort}
-{ author empty$
-    { editor empty$
-        { key empty$
-            { "to sort, need author, editor, or key in " cite$ * warning$
-              ""
-            }
-            { key sortify }
-          if$
-        }
-        { editor sort.format.names }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-FUNCTION {author.organization.sort}
-{ author empty$
-    { organization empty$
-        { key empty$
-            { "to sort, need author, organization, or key in " cite$ * warning$
-              ""
-            }
-            { key sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-FUNCTION {editor.organization.sort}
-{ editor empty$
-    { organization empty$
-        { key empty$
-            { "to sort, need editor, organization, or key in " cite$ * warning$
-              ""
-            }
-            { key sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { editor sort.format.names }
-  if$
-}
-FUNCTION {presort}
-{ type$ "book" =
-  type$ "inbook" =
-  or
-    'author.editor.sort
-    { type$ "proceedings" =
-        'editor.organization.sort
-        { type$ "manual" =
-            'author.organization.sort
-            'author.sort
-          if$
-        }
-      if$
-    }
-  if$
-  "    "
-  *
-  year field.or.null sortify
-  *
-  "    "
-  *
-  title field.or.null
-  sort.format.title
-  *
-  #1 entry.max$ substring$
-  'sort.key$ :=
-}
-ITERATE {presort}
-SORT
 STRINGS { longest.label }
 INTEGERS { number.label longest.label.width }
 FUNCTION {initialize.longest.label}

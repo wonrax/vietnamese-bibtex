@@ -83,14 +83,14 @@ End of customized bst file
 %>>PRESENTATIONS:
 %<<ORDERING OF REFERENCES (if non-author/year and non-alph)
     %: (def) Alphabetical by all authors
-% seq-no,%: Citation order (unsorted, like unsrt.bst)
+ seq-no,%: Citation order (unsorted, like unsrt.bst)
 % seq-yr,%: Year ordered and then by authors
 % seq-yrr,%: Reverse year ordered and then by authors
 %------\ans=*(==)-------
 %>>ORDERING OF REFERENCES (if non-author/year and non-alph)
 %<<ORDERING OF REFERENCES (if author-year citations)
 %   %: (def) Alphabetical by all authors
-% seq-lab,%: By label (Jones before Jones and James before Jones et al)
+ seq-lab,%: By label (Jones before Jones and James before Jones et al)
 % seq-labc,%: By label and cite order (like above but all Jones et al ordered as cited)
 % seq-key,%: By label and cite key instead of label and title, as above
 % seq-yr,%: Year ordered and then by authors (for publication lists)
