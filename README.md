@@ -10,7 +10,7 @@ the theoretical minimum (Penguin Random House, New York, NY).
 Proceedings of the National Academy of Sciences, tập 50, số 6,
 tr. 1143–1148.
 
-[3] Jian Tang (1996 Tháng 9), “Spin structure of the nucleon in the
+[3] Jian Tang (1996), “Spin structure of the nucleon in the
 asymptotic limit”. Luận văn Thạc sĩ, Massachusetts Institute of
 Technology, Cambridge, MA.
 
