@@ -18,7 +18,8 @@ Technology, Cambridge, MA.
 2nd edition.
 ```
 ### How to use
-Download the file `vietnumeric.bst` and use it within your `.tex` file.
+- Download the file `vietnumeric.bst` in [lastest release](https://github.com/wonrax/vietnamese-bibtex/releases/latest).
+- Use that file within your `.tex` file.
 For example, if you put the `vietnumeric.bst` in the same directory with your `.tex` file, specify the bibliography style with this command:
 ```
 \bibliographystyle{vietnumeric}
